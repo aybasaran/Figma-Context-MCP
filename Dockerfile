@@ -30,12 +30,5 @@ COPY --from=base /app/pnpm-lock.yaml ./
 RUN corepack enable && corepack prepare pnpm@latest --activate && \
   pnpm install --prod --frozen-lockfile
 
-# Set environment variables
-ENV NODE_ENV=production
-ENV PORT=3333
-
-# Expose the port the app runs on
-EXPOSE 3333
-
 # Command to run the application
 CMD ["node", "dist/cli.js"]

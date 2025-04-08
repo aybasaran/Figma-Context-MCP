@@ -4,9 +4,8 @@ services:
       context: .
       target: production
     ports:
-      - "3333:3333"
+      - "${PORT}:${EXPOSE_PORT}"
     environment:
-      - NODE_ENV=production
-      - PORT=3333
       - FIGMA_API_KEY=${FIGMA_API_KEY}
+      - PORT=${PORT}
     restart: unless-stopped
