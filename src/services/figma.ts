@@ -1,5 +1,5 @@
 import fs from "fs";
-import { parseFigmaResponse, SimplifiedDesign } from "./simplify-node-response.js";
+import { parseFigmaResponse, type SimplifiedDesign } from "./simplify-node-response.js";
 import type {
   GetImagesResponse,
   GetFileResponse,
@@ -7,7 +7,7 @@ import type {
   GetImageFillsResponse,
 } from "@figma/rest-api-spec";
 import { downloadFigmaImage } from "~/utils/common.js";
-import { Logger } from "~/index.js";
+import { Logger } from "~/utils/logger.js";
 import yaml from "js-yaml";
 
 export interface FigmaError {
